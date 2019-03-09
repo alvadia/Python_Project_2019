@@ -1,0 +1,22 @@
+language: python
+python:
+  - "3.5"
+  # PyPy versions
+  #- "pypy3.5"
+# command to install dependencies
+cache:
+  - pip
+#before_install:
+# Download and unpack the stack executable
+  #- travis_retry curl -sSf -o python-3.5.tar.bz2 ${archive_url} | 11.42s$ sudo tar xjf python-3.5.tar.bz2 --directory /
+install:
+  - pip install flake8
+  # - python setup.py -q install
+# command to run tests
+script:
+  - python tests.py
+  - flake8 *.py
+after_success:
+  - coveralls
+#virtualenv:
+#  system_site_packages: true
