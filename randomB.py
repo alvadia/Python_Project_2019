@@ -95,8 +95,9 @@ def random_address():
 
 def get_wish(store):
     from wishOrder import Wish
-    summ = random_sum(ave_sum_mu * (1.0+random() *
-                                    len(store.book_index)*assort_wish))
+    summ = random_sum(ave_sum_mu *
+        (1.0+random() * len(store.book_index)*assort_wish)
+        )
     if summ < 0:
         summ = 1
     wishes = []
